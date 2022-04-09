@@ -10,6 +10,21 @@ public class Benzinbil extends Bil {
     this.kmPrL = kmPrL;
   }
 
+  @Override
+  public double beregnGrønEjerafgift() {
+    if (kmPrL < 5) {
+      return 10470;
+    } else if (kmPrL > 5 && kmPrL < 10) {
+      return 5500 ;
+    } else if (kmPrL > 10 && kmPrL < 15) {
+      return 2340 ;
+    } else if (kmPrL > 15 && kmPrL < 20) {
+      return 1050 ;
+    } else {
+      return 330;
+    }
+  }
+
   public int getOktantal() {
     return oktantal;
   }
