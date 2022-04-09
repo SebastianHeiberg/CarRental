@@ -11,6 +11,23 @@ public class Elbil extends Bil{
     this.whPrKm = whPrKm;
   }
 
+  @Override
+  public double beregnGrønEjerafgift() {
+    double kmPrL = 100 / (whPrKm/91.25);
+
+    if (kmPrL < 5) {
+      return 10470;
+    } else if (kmPrL > 5 && kmPrL < 10) {
+      return 5500 ;
+    } else if (kmPrL > 10 && kmPrL < 15) {
+      return 2340 ;
+    } else if (kmPrL > 15 && kmPrL < 20) {
+      return 1050 ;
+    } else {
+      return 330;
+    }
+  }
+
   public int getBatterikapacitetKWH() {
     return batterikapacitetKWH;
   }
